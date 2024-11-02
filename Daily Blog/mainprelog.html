@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog Website</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <!--Header begins-->
+    <header id="header">
+        <div class="container">
+          <nav>
+            <ul>
+              <li><h1>DailyBlog</h1></li>
+            </ul>
+          </nav>
+        </div>
+    </header>
+
+    <!-- Grid begins -->
+    <main id="main-grid">
+      <!-- Left sidebar begins-->
+      <aside id="left-sidebar" class="grid-item">
+        <a href="">
+        <button>Home</button>
+        </a>
+        <a href="blogmanagement.html">
+        <button>Manage Post</button>
+        </a>
+        <a href="addcontent.html">
+        <button>Create Post</button>
+        </a>
+        <div style="margin-top: auto;">
+          <a href="#">Contact us</a>
+        </div>
+      </aside>
+
+      <!--Content section begins-->
+      <section id="content" class="grid-item">
+        <div class="search-bar">
+          <input type="text" placeholder="Search...">
+          <button>Search</button>
+        </div>
+
+        <div class="posts">
+          <div class="remaining-posts">Remaining: 18 Posts</div>
+          
+          <!-- Blog Post #1 -->
+          <div class="blog-post">
+            <div class="blog-post-header">
+              <div class="blog-post-profile">
+                <img src="images/f1.jpg" alt="Profile Photo">
+                <span>Aayush Patel</span>
+              </div>
+              <div class="blog-post-date">
+                <span>2024-01-20 12:30</span>
+              </div>
+            </div>
+            <div class="blog-post-content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+            </div>
+            <div class="blog-post-footer">
+              <div class="blog-post-comments">
+                <span><a href = "blogdetails.html">12 Comments</a></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blog Post #2 -->
+          <div class="blog-post">
+            <div class="blog-post-header">
+              <div class="blog-post-profile">
+                <img src="images/f2.jpg" alt="Profile Photo">
+                <span>Kirtan Patel</span>
+              </div>
+              <div class="blog-post-date">
+                <span>2024-02-29 10:00</span>
+              </div>
+            </div>
+            <div class="blog-post-content">
+              <p>Cras mattis consectetur purus sit amet fermentum. Maecenas faucibus mollis interdum.</p>
+            </div>
+            <div class="blog-post-footer">
+              <div class="blog-post-comments">
+                <span><a href = "blogdetails.html">8 Comments</a></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blog Post #3 -->
+          <div class="blog-post">
+            <div class="blog-post-header">
+              <div class="blog-post-profile">
+                <img src="images/f3.jpg" alt="Profile Photo">
+                <span>Milad Momeni</span>
+              </div>
+              <div class="blog-post-date">
+                <span>2024-02-08 16:00</span>
+              </div>
+            </div>
+            <div class="blog-post-content">
+              <p>Aenean lacinia bibendum nulla sed consectetur.</p>
+            </div>
+            <div class="blog-post-footer">
+              <div class="blog-post-comments">
+                <span><a href = "blogdetails.html">5 Comments</a></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Blog Post #4 -->
+          <div class="blog-post">
+            <div class="blog-post-header">
+              <div class="blog-post-profile">
+                <img src="images/f1.jpg" alt="Profile Photo">
+                <span>Vansh Panchal</span>
+              </div>
+              <div class="blog-post-date">
+                <span>2024-02-17 12:00</span>
+              </div>
+            </div>
+            <div class="blog-post-content">
+              <p>Maecenas faucibus mollis interdum. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+            </div>
+            <div class="blog-post-footer">
+              <div class="blog-post-comments">
+                <span><a href = "blogdetails.html">20 Comments</a></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Right sidebar begins -->
+      <aside id="right-sidebar" class="grid-item">
+        <div class="login-container">
+        <form id="loginForm" action="main.html">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+
+        <input type="submit" value="Login">
+        Dont have an account? <a href = "signup.html" >SignUp</a>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Footer begins -->
+    <footer id="footer">
+    </footer>
+</body>
+</html>
