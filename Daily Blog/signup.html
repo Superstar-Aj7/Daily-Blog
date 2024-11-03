@@ -4,44 +4,48 @@
     <meta charset="UTF-8">
     <title>Sign Up</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/eventHandler.js"></script>
 </head>
 <body>
     
     <div class="signup-container">
         <h1>DailyBlog</h1>
         <h2>Create your account</h2>
-        <form action="main.html">
+        <form  id="signup-form" action="main.html">
             <!--Form Begins-->
             <div class="input-group">
-                <input type="email" id="email">
                 <label for="email"><b>Email</label>
+                <input type="email" id="email">
+                <span id="error-text-email" class="error-text hidden"> Invalid Email Address</span>
             </div>
             <div class="input-group">
-                <input type="text" id="username">
                 <label for="username">Username</label>
+                <input type="text" id="username">
+                <span id="error-text-username" class="error-text hidden">Invalid Username</span>
             </div>
-            <div class="date-of-birth">
+            <div class="input-group">
                 <label for="dob">Date of Birth</label>
-                <select id="day">
-                    <option value="">Day</option>
-                    </select>
-                <select id="month">
-                    <option value="">Month</option>
-                    </select>
-                <select id="year">
-                    <option value="">Year</option>
-                    </select>
+                <input type="date" name="dob" id="dob" />
+                <span id="error-text-dob" class="error-text hidden">Invalid Dob</span>
             </div>
             <div class="input-group">
-                <input type="password" id="password">
                 <label for="password">Password</label>
+                <input type="password" id="password">
+                <span id="error-text-pwd" class="error-text hidden"> Invalid Password</span>
             </div>
             <div class="input-group">
-                <input type="password" id="confirm-password">
                 <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password">
+                <span id="error-text-cpwd" class="error-text hidden">Passwords don't match</span>
+            </div>
+            <div class="input-group">
+                <label for="profilephoto">Profile Picture</label>
+                <input type="file" accept="image/*" name="profile-photo" id="profile-photo" />
+                <span id="error-text-pfp" class="error-text hidden">Invalid Profile Picture</span>
             </div>
             <button type="submit">Sign Up</button>
         </form>
     </div>
+    <script src="js/signupEventRegistration.js"></script>
 </body>
 </html>

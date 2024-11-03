@@ -118,7 +118,9 @@ h2 {
 
 .input-group input[type="email"],
 .input-group input[type="text"],
-.input-group input[type="password"] {
+.input-group input[type="password"],
+.input-group input[type="date"],
+.input-group input[type="file"] {
     width: 100%;
     height: 40px;
     padding: 10px;
@@ -477,4 +479,18 @@ button[type="submit"]:hover {
 
 .create-post add-image-button{
     display: none;
+}
+
+/* Error message styles*/
+.error-text{
+    color: red;
+    font-style: italic;
+}
+
+.hidden{
+    visibility:hidden;
+}
+
+input.invalid{
+    border: 2px solid red !important;
 }
