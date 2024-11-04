@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Blog Website</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/eventHandler.js"></script>
 </head>
 <body>
     <!--Header begins-->
@@ -66,10 +67,14 @@
             <span>12 Comments</span>
           </div>
         </div>
+        <form  id="blogdetails-form"method="" action="">
         <div class="comment-box">
-          <textarea placeholder="Add a comment..."></textarea>
-          <button>Post Comment</button>
+          <textarea id="textArea_2" placeholder="Add a comment..."></textarea>
+          <div  id="error-text-area2" class="error-text hidden">Comment can't be empty!</div>
+          <div>Number of characters: <span id="newCount">0</span>/1000</div> <div class="bottom error-text hidden" id="newCount-error-message">LIMIT EXCEEDED</div>
+          <button class="comment-box">Post Comment</button>
         </div>
+        </form>
       </div>
     </div>
     </section>
@@ -82,5 +87,6 @@
     <!-- Footer begins -->
     <footer id="footer">
     </footer>
+    <script src="js/blogDetailsEventRegistration.js"></script>
 </body>
 </html>

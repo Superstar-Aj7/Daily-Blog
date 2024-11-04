@@ -1,3 +1,5 @@
+
+/*RegEx  and other validator functions*/
 function validateEmail(email){
     let regEx =/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
    
@@ -32,7 +34,7 @@ function validateEmail(email){
  }
 
 function validatepwd(pwd){
-    let regEx = /^(?=.*[a-zA-Z])(?=.*[^a-zA-Z])[a-zA-Z0-9!@#$%^&*]{6}$/;
+    let regEx =  /^(?=.*[^a-zA-Z])[^\s]{6,20}$/;
 
     if(regEx.test(pwd) == true){
         return true;
@@ -54,6 +56,17 @@ function validatepwd(pwd){
     }
  }
 
+  function isEmpty(field){
+    if(field == 0){
+     return true;    
+    }
+    else{
+        return false;
+    }
+
+  }
+
+ /*Signup event handler functions*/
  function emailHandler(event){
     let email = event.target.value;
     let errorTextMessageEmail = document.getElementById("error-text-email");
@@ -119,7 +132,7 @@ function validatepwd(pwd){
 
  function cpwdHandler(event){
     let cpwd = event.target.value;
-    let pwd = document.getElementById("password").value
+    let pwd = document.getElementById("password").value;
     let errorTextMessageCpwd = document.getElementById("error-text-cpwd");
     let cpwdBox = document.getElementById("confirm-password");
    
@@ -149,7 +162,7 @@ function validatepwd(pwd){
     }
  }
 
-
+// sign Up submition event handler.
  function signupValidator(event){
 
     let email = document.getElementById("email").value;
@@ -158,29 +171,151 @@ function validatepwd(pwd){
     let pwd = document.getElementById("password").value;
     let cpwd = document.getElementById("confirm-password").value;
     let pfp = document.getElementById("profile-photo").value;
+    let errorMessageEmail = document.getElementById("error-text-email")
+    let errorMessageUname = document.getElementById("error-text-username")
+    let errorMessageDob = document.getElementById("error-text-dob")
+    let errorMessagePwd = document.getElementById("error-text-pwd")
+    let errorMessageCpwd = document.getElementById("error-text-cpwd")
+    let errorMessagePfp = document.getElementById("error-text-pfp")
     let formIsValid = true;
+
 
     if(!validateEmail(email)){
         formIsValid = false;
+        errorMessageEmail.classList.remove("hidden");
+    }
+    else{
+        errorMessageEmail.classList.add("hidden");
     }
     if(!validateUname(uname)){
         formIsValid = false;
+        errorMessageUname.classList.remove("hidden");
+    } 
+    else{
+        errorMessageUname.classList.add("hidden");
     }
     if(!validateDob(dob)){
         formIsValid = false;
+        errorMessageDob.classList.remove("hidden");
+    }
+    else{
+        errorMessageDob.classList.add("hidden");
     }
     if(!validatepwd(pwd)){
         formIsValid = false;
+        errorMessagePwd.classList.remove("hidden");
+    } 
+    else{
+        errorMessagePwd.classList.add("hidden");
     }
-    if(cpwd!= pwd){
+    if(cpwd!= pwd || cpwd==""){
         formIsValid = false;
+        errorMessageCpwd.classList.remove("hidden");
+    }
+    else{
+        errorMessageCpwd.classList.add("hidden");
     }
     if(!validatePfp(pfp)){
         formIsValid = false;
+        errorMessagePfp.classList.remove("hidden");
     }
-
+    else{
+        errorMessagePfp.classList.add("hidden");
+    }
     if(formIsValid === false){
        event.preventDefault();
     }
     
  }
+
+
+//form validation for addcontent page
+function textAreaHandler(event){
+    let field = event.target.value;
+    let errorMessage = document.getElementById("error-text-addcontent");
+
+    if(isEmpty(field)){
+        errorMessage.classList.remove("hidden");
+    }
+    else{
+        errorMessage.classList.add("hidden");
+    }
+}
+
+function addcontentValidator(event){
+    let textArea = document.getElementById("textArea").value;
+    let errorMessage = document.getElementById("error-text-addcontent");
+     let formIsValid = true;
+
+    if(isEmpty(textArea)){
+        formIsValid = false;
+        errorMessage.classList.remove("hidden");
+        
+    } else{
+        formIsValid = true;
+        errorMessage.classList.add("hidden");
+    }
+
+
+    if(formIsValid == false){
+        event.preventDefault();
+    }
+}
+//form validation for blogDetails page.
+function textAreaHandler2(event){
+    let field = event.target.value;
+    let errorMessage = document.getElementById("error-text-area2");
+
+    if(isEmpty(field)){
+        errorMessage.classList.remove("hidden");
+    }
+    else{
+        errorMessage.classList.add("hidden");
+    }
+}
+
+function blogDetailsValidator(event){
+    let textArea = document.getElementById("textArea_2").value;
+    let errorMessage = document.getElementById("error-text-area2");
+     let formIsValid = true;
+
+    if(isEmpty(textArea)){
+        formIsValid = false;
+        errorMessage.classList.remove("hidden");
+
+        
+    } else{
+        errorMessage.classList.add("hidden");
+        formIsValid = true;
+    }
+
+
+    if(formIsValid == false){
+        event.preventDefault();
+    }
+}
+
+
+ // Dynamic character counter function for both addContent and blogDetails pages.
+ function counter(event, maxLimit, countId, errorMessageId) {
+    const textArea = event.target;
+    const count = document.getElementById(countId);
+    const errorMessage = document.getElementById(errorMessageId);
+
+    const currentLength = textArea.value.length;
+
+    count.innerHTML = currentLength;
+
+    if (currentLength > maxLimit) {
+        count.style.color = "red"; 
+        errorMessage.classList.remove("hidden");
+    } 
+    else {
+        count.style.color = "black"; 
+        errorMessage.classList.add("hidden");
+    }
+}
+
+   
+
+   

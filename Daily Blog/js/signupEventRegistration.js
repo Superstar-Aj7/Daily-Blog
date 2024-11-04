@@ -8,10 +8,10 @@ let dob = document.getElementById("dob");
 dob.addEventListener("blur", dobHandler);
 
 let pwd = document.getElementById("password");
-pwd.addEventListener("blur", pwdHandler);
+pwd.addEventListener("input", pwdHandler);
 
 let cpwd = document.getElementById("confirm-password");
-cpwd.addEventListener("blur", cpwdHandler);
+cpwd.addEventListener("input", cpwdHandler);
 
 let pfp = document.getElementById("profile-photo");
 pfp.addEventListener("change", pfpHandler);

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Blog Website</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/eventHandler.js"></script>
 </head>
 <body>
     <!--Header begins-->
@@ -49,13 +50,17 @@
           <button>Search</button>
         </div>
         <div class="create-post">
-            <textarea placeholder="Type message"></textarea>
-            <button style="float: right">Post</button>
+          <form id="addcontent-form" method="" action="">
+            <textarea  class="textarea"  id="textArea" placeholder="Type message"></textarea>
+            <div  id="error-text-addcontent" class="error-text hidden">Post cannot be Empty!</div>
+            <div>Number of characters: <span id="count">0</span>/2000</div> <div id="count-error-message" class="error-text bottom hidden">LIMIT EXCEEDED</div>
+            <button class="post-button" type="submit"style="float: right">Post</button>
             <label for="add-image" class="add-image-button">+</label>
             <input type="file" id="add-image">
+            </form>
         </div>
         
-
+        
       <!-- Right sidebar begins -->
       <aside id="right-sidebar" class="grid-item">
       </aside>
@@ -64,5 +69,6 @@
     <!-- Footer begins -->
     <footer id="footer">
     </footer>
+    <script src="js/addContentEventRegistration.js"></script>
 </body>
 </html>
