@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Blog Website</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/eventHandler.js"></script>
 </head>
 <body>
     <!--Header begins-->
@@ -135,16 +136,17 @@
       <!-- Right sidebar begins -->
       <aside id="right-sidebar" class="grid-item">
         <div class="login-container">
-        <form id="loginForm" action="main.html">
-          
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username"><br>
-
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password"><br><br>
+        <form id="login-form" action="main.html">
+        <label for="email_2">Email:</label><br>
+        <input type="text" id="email_2" name="email_2"><br/>
+        <span id="error-text-mainprelog-username" class="error-text hidden">Invalid username</span>
+        <label for="pwd">Password:</label><br>
+        <input type="password" id="pwd" name="pwd"><br/>
+        <span  id="error-text-mainprelog-password"class=" error-text hidden">Invalid Password</span><br/><br/>
         
         <input type="submit" value="Login">
         Dont have an account? <a href = "signup.html" >SignUp</a>
+        </form>
         </div>
       </aside>
     </main>
@@ -152,5 +154,6 @@
     <!-- Footer begins -->
     <footer id="footer">
     </footer>
+    <script src="js/mainPrelogEventRegistration.js"></script>
 </body>
 </html>

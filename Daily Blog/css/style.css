@@ -191,7 +191,7 @@ button[type="submit"]:hover:not(.post-button){
     padding: 10px;
     border: 1px solid #cccccc;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
   
 .login-container input[type="submit"] {

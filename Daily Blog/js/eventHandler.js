@@ -316,6 +316,66 @@ function blogDetailsValidator(event){
     }
 }
 
-   
 
+// event handlers for Mainprelog page.
+function emailHandler2(event){
+    let email = event.target.value;
+    let errorTextMessageEmail = document.getElementById("error-text-mainprelog-username");
+    let emailBox = document.getElementById("email_2");
+    
+    if(!validateEmail(email)){
+        emailBox.classList.add("invalid");
+        errorTextMessageEmail.classList.remove("hidden");
+    }
+    else{
+        emailBox.classList.remove("invalid");
+        errorTextMessageEmail.classList.add("hidden");
+       
+    }
+ }
+
+ function pwdHandler2(event){
+    let pwd = event.target.value;
+    let errorTextMessagePwd = document.getElementById("error-text-mainprelog-password");
+    let pwdBox = document.getElementById("pwd");
    
+    if(!validatepwd(pwd)){
+        pwdBox.classList.add("invalid");
+        errorTextMessagePwd.classList.remove("hidden");
+    }
+    else{
+        pwdBox.classList.remove("invalid");
+        errorTextMessagePwd.classList.add("hidden");
+       
+    }
+ }
+
+ function mainPrelogValidator(event) {
+    let email = document.getElementById("email_2").value;
+    let pwd = document.getElementById("pwd").value;
+    let errorTextMessageEmail = document.getElementById("error-text-mainprelog-username");
+    let errorTextMessagePwd = document.getElementById("error-text-mainprelog-password");
+    let formIsValid = true;
+
+    if (!validateEmail(email)){
+        formIsValid = false;
+        errorTextMessageEmail.classList.remove("hidden");
+    } 
+    else {
+        errorTextMessageEmail.classList.add("hidden");
+    }
+
+    if (!validatepwd(pwd)) {
+        formIsValid = false;
+        errorTextMessagePwd.classList.remove("hidden");
+    } 
+    else {
+        errorTextMessagePwd.classList.add("hidden");
+    }
+
+    if (!formIsValid) {
+        event.preventDefault();
+    }
+}
+
+
